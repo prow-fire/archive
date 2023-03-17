@@ -1,13 +1,14 @@
-name: Issue
+name: Report an issue with registry.k8s.io
 description: Report a bug encountered while using registry.k8s.io
 labels: ["sig/k8s-infra", "kind/bug", "needs/triage"]
 body:
-  - type: markdown
+  - type: textarea
+    validations:
+      required: true
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
-
-        **Important**: For security related issues: We strongly encourage you to report security vulnerabilities to the private security mailing list: security@cilium.io - first, before disclosing them in any public forums.
+      label: Debugging Information
+      description: >-
+        Bugs **MUST** include debugging logs from general steps in https://github.com/kubernetes/registry.k8s.io/blob/main/docs/debugging.md.
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
@@ -26,13 +27,6 @@ body:
         3. Run '...'
         4. See error...
       value: "A bug happened!"
-    validations:
-      required: true
-  - type: textarea
-    id: cilium-version
-    attributes:
-      label: Cilium Version
-      description: What version of the software was running when you discovered this issue? (run `cilium version`)
     validations:
       required: true
   - type: textarea
