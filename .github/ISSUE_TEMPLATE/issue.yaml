@@ -2,13 +2,6 @@ name: Report an issue with registry.k8s.io
 description: Report a bug encountered while using registry.k8s.io
 labels: ["sig/k8s-infra", "kind/bug", "needs/triage"]
 body:
-  - type: textarea
-    validations:
-      required: true
-    attributes:
-      label: Debugging Information
-      description: >-
-        Bugs **MUST** include debugging logs from general steps in https://github.com/kubernetes/registry.k8s.io/blob/main/docs/debugging.md.
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
@@ -30,11 +23,12 @@ body:
     validations:
       required: true
   - type: textarea
-    id: logs
+    validations:
+      required: true
     attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
+      label: Debugging Information
+      description: >-
+        Bugs **MUST** include debugging logs from general steps in https://github.com/kubernetes/registry.k8s.io/blob/main/docs/debugging.md.
   - type: textarea
     attributes:
       label: Anything else?
